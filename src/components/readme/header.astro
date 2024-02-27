@@ -1,0 +1,16 @@
+---
+const pathname = new URL(Astro.request.url).pathname
+const currentPath = pathname.slice(1)
+const { letter } = Astro.props
+---
+
+<div class="wrapper" id="R">
+  <div class="box almere">
+    <span class="num">{letter}</span>
+  </div>
+  <div class="box bremen"></div>
+  <div class="box charleroi">
+    <a class={currentPath === "" ? "active" : ""} href="/">readme</a>
+    <a class={currentPath === "changelog" ? "active" : ""} href="/changelog">changelog</a>
+  </div>
+</div>
